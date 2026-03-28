@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,100..900;1,100..900&family=Syne:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Roamio — Navy & Copper Design System */
+    --black: 218 45% 6%;
+    --dark: 218 42% 8%;
+    --surface: 218 38% 11%;
+    --panel: 218 35% 14%;
+    --lift: 218 30% 18%;
+
+    /* Copper palette */
+    --copper: 28 55% 47%;
+    --copper-soft: 28 55% 47%;
+    --copper-border: 28 55% 47%;
+
+    /* Linen */
+    --linen: 34 28% 88%;
+
+    /* Status colors */
+    --teal: 177 47% 55%;
+    --violet: 248 52% 66%;
+    --rose: 346 47% 67%;
+    --green: 118 37% 63%;
+
+    /* Shadcn mappings */
+    --background: 218 45% 6%;
+    --foreground: 34 28% 88%;
+
+    --card: 218 38% 11%;
+    --card-foreground: 34 28% 88%;
+
+    --popover: 218 35% 14%;
+    --popover-foreground: 34 28% 88%;
+
+    --primary: 28 55% 47%;
+    --primary-foreground: 218 45% 6%;
+
+    --secondary: 218 30% 18%;
+    --secondary-foreground: 34 28% 88%;
+
+    --muted: 218 35% 14%;
+    --muted-foreground: 218 15% 55%;
+
+    --accent: 218 30% 18%;
+    --accent-foreground: 34 28% 88%;
+
+    --destructive: 346 47% 67%;
+    --destructive-foreground: 34 28% 88%;
+
+    --border: 218 25% 22%;
+    --input: 218 30% 15%;
+    --ring: 28 55% 47%;
+
+    --radius: 0rem;
+
+    --sidebar-background: 218 42% 8%;
+    --sidebar-foreground: 34 28% 88%;
+    --sidebar-primary: 28 55% 47%;
+    --sidebar-primary-foreground: 218 45% 6%;
+    --sidebar-accent: 218 30% 18%;
+    --sidebar-accent-foreground: 34 28% 88%;
+    --sidebar-border: 218 25% 22%;
+    --sidebar-ring: 28 55% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    cursor: none;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Syne', sans-serif;
+    font-weight: 400;
+    background-color: #0b0f1a;
+    color: #e8dfd0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+  }
+
+  ::selection {
+    background: rgba(180, 120, 60, 0.25);
+    color: #e8dfd0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0f1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(180, 120, 60, 0.3);
+    border-radius: 0;
+  }
+}
+
+@layer components {
+  /* Copper gradient divider */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(180,120,60,0.3), transparent);
+  }
+
+  /* Copper accent left border */
+  .copper-accent {
+    border-left: 3px solid #b4783c;
+    padding-left: 16px;
+  }
+
+  /* Section label style */
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #b4783c;
+    font-weight: 500;
+  }
+
+  /* Luxury card */
+  .luxury-card {
+    background: #111827;
+    border: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .luxury-card:hover {
+    border-color: rgba(180,120,60,0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(180,120,60,0.12);
+  }
+
+  /* Copper button */
+  .btn-gold {
+    background: #b4783c;
+    color: #0b0f1a;
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    padding: 14px 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .btn-gold:hover {
+    background: #c98844;
+    box-shadow: 0 0 30px rgba(180,120,60,0.4);
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    background: transparent;
+    color: #e8dfd0;
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid rgba(232,223,208,0.2);
+    padding: 13px 27px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .btn-ghost:hover {
+    border-color: rgba(180,120,60,0.5);
+    color: #b4783c;
+  }
+
+  /* Copper chip */
+  .gold-chip {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    background: rgba(180,120,60,0.12);
+    border: 1px solid rgba(180,120,60,0.25);
+    color: #b4783c;
+    padding: 5px 12px;
+  }
+
+  /* Stat block */
+  .stat-block {
+    border-left: 1px solid rgba(180,120,60,0.15);
+    padding: 12px 20px;
+  }
+  .stat-number {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 200;
+    color: #b4783c;
+  }
+  .stat-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(232,223,208,0.35);
+    margin-top: 4px;
+  }
+
+  /* Panel surface */
+  .surface-panel {
+    background: #141c2e;
+    border: 1px solid rgba(232,223,208,0.06);
+  }
+
+  /* AI suggestion box */
+  .ai-suggestion {
+    background: linear-gradient(135deg, rgba(180,120,60,0.08), rgba(180,120,60,0.02));
+    border: 1px solid rgba(180,120,60,0.2);
+  }
+
+  /* Grain overlay */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+
+  /* Ticker tape */
+  .ticker-track {
+    display: flex;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Skeleton shimmer */
+  .skeleton {
+    background: linear-gradient(90deg, #111827 25%, #1a2540 50%, #111827 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Digital key pulse */
+  @keyframes nfc-pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.4); opacity: 0.3; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+  .nfc-ring {
+    animation: nfc-pulse 2s ease-out infinite;
+  }
+
+  /* Typing dots */
+  @keyframes dot-bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+  }
+  .typing-dot:nth-child(1) { animation: dot-bounce 1.2s infinite 0s; }
+  .typing-dot:nth-child(2) { animation: dot-bounce 1.2s infinite 0.2s; }
+  .typing-dot:nth-child(3) { animation: dot-bounce 1.2s infinite 0.4s; }
+
+  /* Count up */
+  .count-up {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Glass */
+  .glass {
+    background: rgba(11, 15, 26, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* Hero grid lines — navy tinted */
+  .grid-lines {
+    background-image:
+      linear-gradient(rgba(180,120,60,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(180,120,60,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* Vertical copper bar accent */
+  .v-bar {
+    width: 4px;
+    background: #b4783c;
+    flex-shrink: 0;
+  }
+
+  /* Data row */
+  .data-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(232,223,208,0.05);
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+  }
+}
