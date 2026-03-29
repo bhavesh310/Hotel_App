@@ -1,73 +1,160 @@
-# Welcome to your Lovable project
 
-## Project info
+# 🏨 Roamio
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+> AI-powered luxury hotel booking platform for the discerning modern traveller.
 
-## How can I edit this code?
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Overview
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+**Roamio** redefines luxury hospitality by combining cutting-edge AI with an elegant,
+seamless booking experience. Built for travellers who expect nothing but the best —
+curated stays, personalized recommendations, and effortless reservations at the
+world's finest hotels.
 
-Changes made via Lovable will be committed automatically to this repo.
+**Live Demo →** [Roamio](https://roamiohotelapp.netlify.app/)
+---
 
-**Use your preferred IDE**
+## Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+| Layer | Technology | Reason |
+|---|---|---|
+| Frontend | React 18 + TypeScript | Type-safe component model |
+| Build Tool | Vite 5 | Fast HMR, zero-config build |
+| Styling | Tailwind CSS + shadcn/ui | Utility-first, accessible components |
+| Routing | React Router DOM v6 | Declarative client-side routing |
+| State | Zustand | Lightweight, scalable state |
+| Server State | TanStack Query v5 | Smart caching and data fetching |
+| Forms | React Hook Form + Zod | Performant forms with schema validation |
+| Charts | Recharts | Composable React chart library |
+| Package Manager | Bun | Ultra-fast installs and scripts |
+| Testing | Vitest + Testing Library | Fast unit and integration tests |
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **AI-Powered Recommendations** — Personalized hotel suggestions based on preferences
+- **Luxury Hotel Search** — Filter by location, amenities, price, and ratings
+- **Seamless Booking Flow** — Streamlined reservation with real-time availability
+- **User Authentication** — Secure login and session management
+- **Booking Dashboard** — Manage upcoming and past reservations
+- **Responsive Design** — Pixel-perfect across all devices
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Project Structure
+```
+roamio/
+├── public/                  # Static assets
+├── src/
+│   ├── components/
+│   │   └── ui/              # shadcn/ui base components
+│   ├── pages/               # Route-level page components
+│   ├── hooks/               # Custom React hooks
+│   ├── lib/                 # Utility functions
+│   ├── store/               # Zustand state stores
+│   ├── types/               # TypeScript type definitions
+│   ├── App.tsx              # Root component & routing
+│   └── main.tsx             # Application entry point
+├── index.html
+├── tailwind.config.ts
+├── vite.config.ts
+└── package.json
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Getting Started
 
-**Use GitHub Codespaces**
+### Prerequisites
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- [Bun](https://bun.sh/) >= 1.0 or Node.js >= 18
+- Git
 
-## What technologies are used for this project?
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/bhavesh310/roamio.git
+cd roamio
 
-This project is built with:
+# Install dependencies
+bun install
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Start development server
+bun dev
+```
 
-## How can I deploy this project?
+### Available Scripts
+```bash
+bun dev           # Start dev server → localhost:5173
+bun build         # Production build
+bun build:dev     # Development build
+bun preview       # Preview production build
+bun lint          # Run ESLint
+bun test          # Run all tests once
+bun test:watch    # Run tests in watch mode
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## Environment Variables
 
-Yes, you can!
+Create a `.env` file in the root directory:
+```env
+VITE_APP_NAME=Roamio
+VITE_API_BASE_URL=https://api.roamio.com
+VITE_API_KEY=your_api_key_here
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Deployment
+
+### Deploy to Netlify
+```bash
+bun build
+# Deploy the /dist folder to Netlify
+```
+
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
+
+---
+
+## UI Components
+
+Roamio uses [shadcn/ui](https://ui.shadcn.com/) — beautifully designed, accessible
+components built on Radix UI and Tailwind CSS.
+```bash
+# Add new components
+bunx shadcn@latest add button
+bunx shadcn@latest add card
+bunx shadcn@latest add dialog
+```
+
+---
+
+## License
+
+This project is **private and proprietary**. All rights reserved.
+
+---
+
+## Author
+
+**Bhavesh Ghatode** — Full Stack Developer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bhavesh-kumar-4466a3276/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bhavesh310)
+
+---
+
+<p align="center">
+  <i>Built with obsession, not tutorials.</i>
+</p>
